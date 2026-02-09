@@ -20,6 +20,7 @@ Import-Module .\SimplePowerShellHTTPServer\SimplePowerShellHttpServer.psm1
 2. Start the server (8080 to avoid privileged ports):
 ```powershell
 Start-HttpServer -URL 'localhost' -Port 8080 -Path (Join-Path $PWD 'SimplePowerShellHTTPServer')
+Start-HttpServer -URL '0.0.0.0' -Port 1234
 ```
    - A random API key prints at startup; use it for remote commands. Logs go to `SPHS.log` when `-LogLevel` is set. The default index page in the module folder is served.
 3. Serve your own content by pointing `-Path` at another directory or load settings from JSON with `Start-HttpServer -Load .\server.json`.
